@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+    <body>
+        <p>Original content</p>
+        <script type="text/javascript">
+            var xhr = new XMLHttpRequest();
+
+            //assign the request attributes
+            xhr.open("GET", window.location.pathname, true);
+
+            //define the callback function
+            xhr.onreadystatechange=function(){
+                if (xhr.readyState == 4){ //ready state 4 is completion
+                    var message = "";
+                    if (xhr.status==200){ //success
+                        message = "Ajax loaded content";
+                    }
+                    else{ //error
+                        message = "An error has occured making the request";
+                    }
+                    document.getElementsByTagName("p")[0].innerHTML = message;
+                }
+            }
+
+            //send the actual request
+            xhr.send(null);
+        </script>
+    </body>
+</html>

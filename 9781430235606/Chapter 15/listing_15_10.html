@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>First jQuery Example</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" >
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $.ajax(
+                {
+                    type: "get",
+                    url: window.location.pathname,
+                    dataType: "text",
+                    success: function(data) {
+                        $("p").html("Ajax loaded content");
+                    },
+                    failure: function(){
+                        $("p").html("An error has occurred making the request");
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p>Original content</p>
+    </body>
+</html>

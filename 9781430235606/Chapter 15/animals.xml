@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<animals>
+  <dogs>
+    <dog>
+      <name>snoopy</name>
+      <color>brown</color>
+      <breed>beagle cross</breed>
+    </dog>
+    <dog>
+      <name>jade</name>
+      <color>black</color>
+      <breed>lab cross</breed>
+    </dog>
+  </dogs>
+  <cats>
+    <cat>
+      <name>teddy</name>
+      <color>brown</color>
+      <breed>tabby</breed>
+    </cat>
+  </cats>
+</animals>

@@ -1,0 +1,15 @@
+<script type="text/javascript">
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "animals.xml");
+    xhr.onreadystatechange=function(){
+        if (xhr.readyState == 4){ //ready state 4 is completion
+            if (xhr.status==200){
+                alert("success");
+            }
+            else{
+                alert("error");
+            }
+        }
+    }
+    xhr.send("our content");
+</script>

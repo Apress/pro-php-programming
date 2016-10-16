@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <item>
+      <title>a</title>
+      <description>b</description>
+      <link>c</link>
+      <guid>d</guid>
+      <lastBuildDate>Fri, 15 Jul 2011 19:37:49 +0200</lastBuildDate>
+      <dc:pubDate>e</dc:pubDate>
+    </item>
+    <item>
+      <title>a2</title>
+      <description>b2</description>
+      <link>c2</link>
+      <guid>d2</guid>
+      <lastBuildDate>Fri, 15 Jul 2011 19:37:49 +0200</lastBuildDate>
+      <dc:pubDate>e2</dc:pubDate>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,14 @@
+<animals>
+    <color>black</color>
+    <dog>
+        <name>snoopy</name>
+        <breed>
+            <cat>
+                <color>brown</color>
+                <breed>tabby</breed>
+            </cat>
+            beagle cross
+        </breed>
+    </dog>
+    <name>teddy</name>
+</animals>

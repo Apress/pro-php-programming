@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Loading JSON with jQuery</title>
+        <script type="text/javascript"
+                src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" >
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $.getJSON("json_example.php" , function(data){
+                    $.each(data, function(continent, animals){
+                        var message = "<strong>" + continent + "</strong><br/>";
+                        for(j=0;j<animals.length;++j){
+                            message += animals[j] + ", ";
+                        }
+                        //remove last comma and space
+                        message = message.trim();
+                        message = message.substring(0, message.length - 1);
+                        $("#generated_content").append("<p>" + message + "</p>");
+                    });
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <p><strong>Ajax parsed JSON:</strong></p>
+        <div id="generated_content">&nbsp;</div>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>XHR Example - XML</title>
+        <style type="text/css">
+            #generated_content{
+                border: 1px solid black;
+                width: 300px;
+                background-color: #dddddd;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <p><strong>Ajax grabbed specific XML below:</strong></p>
+        <div id="generated_content">&nbsp;</div>
+        <script type="text/javascript">
+            var xhr = new XMLHttpRequest();
+
+            //assign the request attributes
+            xhr.open("GET", "animals.xml", true);
+
+            //define the callback function
+            xhr.onreadystatechange=function(){
+                if (xhr.readyState == 4){ //ready state 4 is completion
+                    var message = "";
+                    if (xhr.status==200){ //success
+                        var xml_data = xhr.responseXML
+                        //retrieve result as an XML object
+                        var names = xml_data.getElementsByTagName("name");
+                        for(i=0; i<names.length; ++i){
+                            message += names[i].firstChild.nodeValue + "<br/>\n";
+                            //ex) "Snoopy\n"
+                        }
+                    }
+                    else{ //error
+                        message = "An error has occured making the request";
+                    }
+                    document.getElementById("generated_content").innerHTML = message;
+                }
+            }
+
+            //send the actual request
+            xhr.send(null);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title>Loading XML with jQuery</title>
+        <style type="text/css">
+            #generated_content{
+                border: 1px solid black;
+                width: 300px;
+                background-color: #dddddd;
+				padding: 20px;
+            }
+        </style>
+        <script type="text/javascript"
+                src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" >
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $.get("animals.xml" , function(data){
+                    var message = "";
+                    var names = data.getElementsByTagName("name");
+                    for(i=0; i < names.length; ++i){
+                        message += names[i].firstChild.nodeValue + "<br/>\n";
+                    }
+                    $("#generated_content").html(message);
+                }, "xml");
+            });
+        </script>
+    </head>
+    <body>
+        <p><strong>Ajax parsed XML:</strong></p>
+        <div id="generated_content">&nbsp;</div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>XHR Example - Plain Text Containing HTML</title>
+        <style type="text/css">
+            #generated_content{
+                border: 1px solid black;
+                width: 300px;
+                background-color: #dddddd;
+            }
+        </style>
+    </head>
+    <body>
+        <p><strong>Ajax grabbed plain text containing html:</strong></p>
+        <div id="generated_content">&nbsp;</div>
+        <script type="text/javascript">
+            var xhr = new XMLHttpRequest();
+
+            //assign the request attributes
+            xhr.open("GET", "sample_table.html", true);
+
+            //define the callback function
+            xhr.onreadystatechange=function(){
+                if (xhr.readyState == 4){ //ready state 4 is completion
+                    var message = "";
+                    if (xhr.status==200){ //success
+                        message = xhr.responseText //retrieve result as plain text
+                    }
+                    else{ //error
+                        message = "An error has occured making the request";
+                    }
+                    document.getElementById("generated_content").innerHTML = message;
+                }
+            }
+
+            //send the actual request
+            xhr.send(null);
+        </script>
+    </body>
+</html>
+    
